@@ -1,0 +1,9 @@
+[push]
+	default = simple
+[user]
+	email = rob@skilstak.com
+	name = Rob Muhlestein
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true

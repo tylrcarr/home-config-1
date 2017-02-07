@@ -1,0 +1,2 @@
+#!/bin/sh
+date "+%l:%M %p, %A, %B %e, %Y" |sed 's/  / /g; s/^ *//'

@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# This is extremely dangerous, only use if you know what you are doing. 
+
+
+branch=`git branch | grep \* | cut -d ' ' -f2`
+pbranch=master
+if [ "$branch" != "master" ]; then
+  pbranch=master:$branch
+fi
+mv .git /tmp/gitreset$$
+url=`grep url /tmp/gitreset$$/config|awk '{print $3}'`
+echo $url
+git init
+git add -A .
+git commit -m "Reset"
+git remote add origin $url
+git push -u --force origin $pbranch
+if [ "$branch" != "master" ]; then
+  git checkout $branch
+  git pull
+fi

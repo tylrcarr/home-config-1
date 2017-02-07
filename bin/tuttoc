@@ -1,0 +1,3 @@
+#!/bin/bash
+
+head -1 */README.md | grep \# |perl -n -e 'BEGIN{$n=1} $N = sprintf("%0.2i", $n); s/\#\s+//; s/^/1. \[/; s/$/\]\($N\)/; print; $n++'

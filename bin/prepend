@@ -1,0 +1,12 @@
+#!/bin/sh
+
+line=$1
+shift
+
+for file in $@; do 
+  mv "$file" "$file.$$"
+  echo "$line" > "$file"
+  cat "$file.$$" >> "$file"
+  rm "$file.$$"
+done
+
