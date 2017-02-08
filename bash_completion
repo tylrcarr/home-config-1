@@ -7,6 +7,21 @@ _note() {
   COMPREPLY=( $(compgen -W "$list" -- $typed))
 }
 complete -F _note note
+
+_sks() {
+  local list=`sks _commands`
+  local typed=${COMP_WORDS[COMP_CWORD]}
+  COMPREPLY=( $(compgen -W "$list" -- $typed))
+}
+complete -F _sks sks
+
+_sksadm() {
+  local list=`sksadm _commands`
+  local typed=${COMP_WORDS[COMP_CWORD]}
+  COMPREPLY=( $(compgen -W "$list" -- $typed))
+}
+complete -F _sksadm sksadm
+
 alias todo='note todo'
 _repo() {
   local list=`repo`
