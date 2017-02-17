@@ -4,8 +4,10 @@ unbind C-b
 set -g prefix C-a
 bind-key C-a last-window
 set -g status off
+bind | split-window -h
 bind \ split-window -h
 bind - split-window -v
+bind _ split-window -v
 setw -g mode-keys vi
 
 bind -r C-k resize-pane -U
@@ -27,6 +29,11 @@ unbind C-Up
 unbind C-Down 
 unbind C-Left 
 unbind C-Right
+
+set -g clock-mode-style 12
+set -g mouse on
+set -g default-terminal "screen-256color"
+set -g base-index 1
 
 if-shell "type 'reattach-to-user-namespace' >/dev/null" "set -g default-command 'reattach-to-user-namespace -l $SHELL'"
 
