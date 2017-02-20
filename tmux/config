@@ -31,7 +31,6 @@ unbind C-Left
 unbind C-Right
 
 set -g clock-mode-style 12
-set -g mouse on
 set -g default-terminal "screen-256color"
 set -g base-index 1
 
