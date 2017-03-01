@@ -113,17 +113,18 @@ set nowritebackup
 " you really don't need any of this
 
 set background=dark
-"let g:solarized_visibility="high"
-"let g:solarized_contrast="high"
-"let g:solarized_termcolors=16
-"let g:solarized_termtrans=1
-" colorscheme solarized
-colorscheme desert
+let g:solarized_visibility="high"
+let g:solarized_contrast="high"
+let g:solarized_termcolors=16
+let g:solarized_termtrans=1
+colorscheme solarized
+"colorscheme desert
 
 "set cursorline
 highlight  CursorLine cterm=NONE ctermbg=darkgrey ctermfg=None
 autocmd InsertEnter * highlight  CursorLine ctermbg=None ctermfg=None
 autocmd InsertLeave * highlight  CursorLine ctermbg=darkgrey ctermfg=None
+
 
 "set cursorcolumn
 "highlight  CursorColumn cterm=NONE ctermbg=darkgrey ctermfg=None
@@ -256,3 +257,4 @@ inoremap <down> <NOP>
 inoremap <left> <NOP>
 inoremap <right> <NOP>
 
+highlight EndOfBuffer ctermfg=black ctermbg=black
