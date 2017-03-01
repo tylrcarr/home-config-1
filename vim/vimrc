@@ -194,7 +194,7 @@ autocmd BufNewFile,BufRead *.crontab set ft=crontab
 
 let g:goyo_height="100%"
 let g:goyo_width=80
-let g:goyo_liner=70
+let g:goyo_liner=71
 
 if has("autocmd")
   au FileType markdown,txt,html,jade set spell
