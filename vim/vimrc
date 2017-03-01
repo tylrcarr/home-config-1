@@ -258,3 +258,4 @@ inoremap <left> <NOP>
 inoremap <right> <NOP>
 
 highlight EndOfBuffer ctermfg=black ctermbg=black
+highlight StatusLine cterm=None term=None
