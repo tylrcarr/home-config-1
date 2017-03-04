@@ -114,11 +114,13 @@ alias todo='note todo'
 alias grep='grep -i'
 alias goi='go install'
 alias gor='go run main.go'
+alias gorr='repeat gor'
 alias got='go test -v'
+alias gott='repeat got'
 
 repeat() {
   while true; do
-    $*
+    eval $*
     sleep 1
   done
 }
