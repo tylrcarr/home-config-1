@@ -116,6 +116,13 @@ alias goi='go install'
 alias gor='go run main.go'
 alias got='go test -v'
 
+repeat() {
+  while true; do
+    $*
+    sleep 1
+  done
+}
+
 export PYTHONDONTWRITEBYTECODE=true
 export PYTHONPATH=./lib/:../lib:./.lib:../../lib:../../.lib:../../../lib:../../../.lib:$HOME/lib/python:$CONFIG/lib/python:$SKILSTAK/lib/python:$HOME/repos/storyeng
 export CLASSPATH=./:$HOME/lib/java:$CONFIG/lib/java:$CLASSPATH
