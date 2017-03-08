@@ -71,10 +71,6 @@ repo() {
   fi
 }
 
-gorepo() {
-  repo go-$1
-}
-
 readme() {
   if [ -z "$1" ]; then 
     for i in `ls -1 $HOME/repos/**/README.md`; do
