@@ -40,13 +40,12 @@ repopaths() {
 }
 
 repath() {
-  export GOPATH=$HOME/go
   export PATH=\
 ./:\
 ./bin:\
 ./.bin:\
 "$HOME/bin":\
-"$GOPATH/bin":\
+"$HOME/go/bin":\
 "$CONFIG/bin":\
 "$SKILSTAK/bin":\
 "$SKILSTAKMC/bin":\
