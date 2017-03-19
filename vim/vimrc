@@ -102,12 +102,15 @@ set ignorecase
 set smartcase
 set incsearch
 set showmatch
+set matchtime=3
 set wrap
 set textwidth=70
 set formatoptions=qrn1
 set nobackup
 set noswapfile
 set nowritebackup
+
+let loaded_matchparen=0
 
 " Keep in mind that if you have already solarized your gnome-terminal
 " you really don't need any of this
