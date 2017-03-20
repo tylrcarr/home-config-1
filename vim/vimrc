@@ -180,7 +180,7 @@ function! SaveIt()
   execute "!exec save"
 endfunction
 command Save :call SaveIt()
-command W :call SaveIt()
+"command W :call SaveIt()
 
 " modula what?
 autocmd BufNewFile,BufRead *.md set filetype=markdown
