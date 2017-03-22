@@ -26,6 +26,8 @@ Plugin 'cespare/vim-toml'
 Plugin 'tfnico/vim-gradle'
 Plugin 'keith/swift.vim'
 Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'moorereason/vim-markdownfmt'
+
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -182,6 +184,9 @@ command W :call SaveIt()
 " modula what?
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 autocmd BufNewFile,BufRead LINKS set filetype=markdown
+
+let g:markdownfmt_command = 'markdownfmt'
+let g:markdownfmt_autosave=1
 
 " json almost  == javascript
 autocmd BufNewFile,BufRead *.json set ft=json
