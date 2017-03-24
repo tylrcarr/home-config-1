@@ -22,6 +22,13 @@ _sksadm() {
 }
 complete -F _sksadm sksadm
 
+_sk() {
+  local list=`sk ls`
+  local typed=${COMP_WORDS[COMP_CWORD]}
+  COMPREPLY=( $(compgen -W "$list" -- $typed))
+}
+complete -F _sk sk
+
 alias todo='note todo'
 _repo() {
   local list=`repo`
