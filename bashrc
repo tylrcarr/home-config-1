@@ -23,6 +23,7 @@ shopt -s histappend
 shopt -s checkwinsize
 HISTSIZE=1000
 HISFILESIZE=2000
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 set -o notify
 set -o noclobber
