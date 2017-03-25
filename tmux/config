@@ -20,6 +20,8 @@ bind -r j select-pane -D
 bind -r h select-pane -L 
 bind -r l select-pane -R 
 
+bind -r C-h attach -c "#{pane_current_path}"
+
 unbind Up     
 unbind Down   
 unbind Left   
