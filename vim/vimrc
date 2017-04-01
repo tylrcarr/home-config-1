@@ -105,7 +105,7 @@ set incsearch
 set showmatch
 set matchtime=3
 set wrap
-set textwidth=70
+set textwidth=60
 set formatoptions=qrn1
 set nobackup
 set noswapfile
