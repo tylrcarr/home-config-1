@@ -42,9 +42,6 @@ repopaths() {
 
 repath() {
   export PATH=\
-./:\
-./bin:\
-./.bin:\
 "$HOME/bin":\
 "$HOME/go/bin":\
 "$CONFIG/bin":\
@@ -95,13 +92,14 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 if [ $PLATFORM != 'bsd' ]; then
-	alias ls='ls -h --color=auto'
+	alias ls='ls -h --colors'
 else
+  export CLICOLOR_FORCE=1
   export CLICOLOR=1
 	export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 fi
 
-alias more='less -r'
+alias more='less -R'
 alias pytest='nosetests'
 alias pyinstall='sudo pip3 install --upgrade .'
 alias runallpy='for i in *.py;do python3 $i; done'
@@ -113,6 +111,10 @@ alias gor='go run main.go'
 alias gorr='repeat gor'
 alias got='go test'
 alias gott='repeat got'
+
+gocd () {
+  cd `go list -f '{{.Dir}}' ...$1`
+}
 
 repeat() {
   while true; do

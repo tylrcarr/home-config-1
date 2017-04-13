@@ -175,13 +175,12 @@ function! GetNow()
 endfunction
 command Now :call GetNow()<CR>
 
-" :Save command (needs a save script/cmd installed)
-function! SaveIt()
-  execute "w"
-  execute "!exec save"
+" :Now command, (needs a now script/cmd of some kind)
+function! GetSKID()
+  let result = substitute(system('skid'), '[\]\|[[:cntrl:]]', '', 'g')
+  call setline(line('.'), getline('.') . result)
 endfunction
-command Save :call SaveIt()
-"command W :call SaveIt()
+command Skid :call GetSKID()<CR>
 
 " modula what?
 autocmd BufNewFile,BufRead *.md set filetype=markdown
