@@ -29,6 +29,7 @@ _links() {
   bashrc
   vim
   dircolors
+  sqliterc
   "
 
   for i in $links; do 
