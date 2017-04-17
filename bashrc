@@ -92,7 +92,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 if [ $PLATFORM != 'bsd' ]; then
-	alias ls='ls -h --colors'
+	alias ls='ls -h --color'
 else
   export CLICOLOR_FORCE=1
   export CLICOLOR=1
