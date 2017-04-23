@@ -197,7 +197,7 @@ alias promptmed='export PS1="\[${c_base1}\]\u\[$c_base01\]@\[$c_base00\]\h:\[$c_
 alias promptpwd='export PS1="\[${c_base01}\]\W\[$c_cyan\]\\$ \[$c_reset\]"'
 alias promptnone='export PS1="\[$c_cyan\]\\$ \[$c_reset\]"'
 
-if [ -e ~/.emoji ]; then
+if [ -z "$EMOJI" -a -e ~/.emoji ]; then
   EMOJI=`head -1 ~/.emoji`
 fi
 
