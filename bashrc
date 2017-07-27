@@ -203,7 +203,7 @@ fi
 
 alias promptemoji='export PS1="${EMOJI}\[${c_base1}\]\u\[$c_base01\]@\[$c_base00\]\h:\[$c_yellow\]\W\[$c_cyan\]\\$ \[$c_reset\]"'
 
-promptemoji
+promptmed
 
 #-------------------------------- Vim-ish ---------------------------------
 
