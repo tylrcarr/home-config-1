@@ -1,9 +1,5 @@
 export CONFIG=$HOME/repos/home-config
-export SKILSTAK=/usr/share/skilstak
 export TERM=xterm-256color
-export SKILSTAKMC=/usr/share/skilstakmc
-export SKILSTAKGO=/usr/share/skilstakgo
-export SKSDATA=$HOME/repos/skilstak.github.io/_data
 
 if [ ! $TERM = 'screen' ]; then
   # bail if somehow non-interactive
@@ -45,9 +41,6 @@ repath() {
 "$HOME/bin":\
 "$HOME/go/bin":\
 "$CONFIG/bin":\
-"$SKILSTAK/bin":\
-"$SKILSTAKMC/bin":\
-"$SKILSTAKGO/bin":\
 `repopaths`\
 /usr/games:\
 /usr/local/go/bin:\
@@ -84,8 +77,6 @@ alias config="cd $CONFIG"
 if [ -x /usr/bin/dircolors ]; then
   if [ -r ~/.dircolors ]; then
     eval "$(dircolors -b ~/.dircolors)"
-  elif [ -r /usr/share/skilstak/dircolors ]; then 
-    eval "$(dircolors -b /usr/share/skilstak/dircolors)"
   else
     eval "$(dircolors -b)"
   fi
@@ -124,9 +115,8 @@ repeat() {
 }
 
 export PYTHONDONTWRITEBYTECODE=true
-export PYTHONPATH=./lib/:../lib:./.lib:../../lib:../../.lib:../../../lib:../../../.lib:$HOME/lib/python:$CONFIG/lib/python:$SKILSTAK/lib/python:$HOME/repos/storyeng
+export PYTHONPATH=./lib/:../lib:./.lib:../../lib:../../.lib:../../../lib:../../../.lib:$HOME/lib/python:$CONFIG/lib/python:$HOME/repos/storyeng
 export CLASSPATH=./:$HOME/lib/java:$CONFIG/lib/java:$CLASSPATH
-export FUNDATA=$HOME/repos/fundamentals/data
 
 jhome () {
   export JAVA_HOME=`/usr/libexec/java_home $@`
@@ -150,14 +140,9 @@ alias ip="ifconfig | perl -ne '/^\s*inet (?:addr)?/ and print'"
 
 alias repos='cd "$HOME/repos"'
 alias root='sudo su -'
-alias skilstak='repo usr-share-skilstak'
 alias gotl='while true; do go test; sleep 1; done'
 
 #------------------------------- Web Dev ----------------------------------
-
-if [ `which jade.js` ]; then
-    alias jade=jade.js
-fi
 
 if [ `which browser-sync` ]; then
   alias bs="browser-sync start -s --no-ui --no-open -f '**/*'"
@@ -206,8 +191,6 @@ alias promptemoji='export PS1="${EMOJI}\[${c_base1}\]\u\[$c_base01\]@\[$c_base00
 promptmed
 
 #-------------------------------- Vim-ish ---------------------------------
-
-set -o vi
 
 if [ "`which vim 2>/dev/null`" ]; then
   export EDITOR=vim
