@@ -5,23 +5,6 @@
 
 tstamp=`bin/tstamp`
 
-_ssh() {
-  if [ ! -e "$HOME/.ssh/id_rsa.pub" ]; then
-    echo "Looks like you don't have any SSH keys yet. Wanna create them now?"
-    read answer
-    if [ "$answer" == "yes" -o "$answer" == "y" ]; then
-      echo "Usually just hit enter to accept all the defaults."
-      ssh-keygen
-      clear
-      echo "Cut and paste (yes with the mouse) the following to your" | sol yellow
-      echo "GitHub -> Settings -> SSH Keys:" | sol yellow
-      echo
-      pubkey
-      echo
-    fi
-  fi
-}
-
 _links() {
   links="
   bash_completion
@@ -47,17 +30,6 @@ _links() {
   ln -fs $CONFIG/vim/vimrc "$HOME/.vimrc"
 }
 
-_git() {
-  if [ ! -e "$HOME/.gitconfig" ]; then
-    cp gitconfig "$HOME/.gitconfig"
-    echo
-    echo "Don't forget to change your settings in $HOME/.gitconfig:"
-    echo
-    cat "$HOME/.gitconfig"
-    echo
-  fi
-}
-
 _tmux() {
   target="$HOME/.tmux.conf"
   if [ -e $target ]; then
@@ -67,13 +39,7 @@ _tmux() {
   ln -fs $CONFIG/tmux/config $target
 }
 
-_emoji() {
-  [[ -e "$HOME/.emoji" ]] || echo "🍰 " > "$HOME/.emoji"
-}
 
 #####################################################
-_ssh
 _links
-#_git
 _tmux
-_emoji
