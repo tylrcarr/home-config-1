@@ -102,6 +102,7 @@ alias gor='go run main.go'
 alias gorr='repeat gor'
 alias got='go test'
 alias gott='repeat got'
+alias typora="open -a typora"
 
 gocd () {
   cd `go list -f '{{.Dir}}' ...$1`
