@@ -1,4 +1,0 @@
-#!/bin/sh
-
-find . -name "*.git*" -prune -o -exec "$@" {} 2>/dev/null \;
-
