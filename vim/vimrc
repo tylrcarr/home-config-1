@@ -26,7 +26,7 @@ Plugin 'cespare/vim-toml'
 Plugin 'tfnico/vim-gradle'
 Plugin 'keith/swift.vim'
 Plugin 'mustache/vim-mustache-handlebars'
-
+Plugin 'gabrielelana/vim-markdown'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -42,9 +42,9 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-let g:goyo_width=71
-let g:goyo_height=22
-let  g:goyo_linenr=0
+"let g:goyo_width=71
+"let g:goyo_height=22
+"let  g:goyo_linenr=0
 
 function! s:goyo_enter()
   let b:quitting = 0
@@ -199,12 +199,12 @@ autocmd BufNewFile,BufRead *.esdl set ft=toml
 autocmd BufNewFile,BufRead *.crontab set ft=crontab
 
 let g:goyo_height="100%"
-let g:goyo_width=80
-let g:goyo_liner=71
+let g:goyo_width=70
+let g:goyo_liner=70
 
 if has("autocmd")
   au FileType markdown,txt,html,jade set spell
-  au FileType markdown,txt Goyo 70
+  "au FileType markdown,txt Goyo 70
   au FileType yaml,javascript,html,json,jade,stylus setl tabstop=2 shiftwidth=2 softtabstop=2
   au FileType go setl tabstop=8 shiftwidth=8 softtabstop=8
   au FileType java,python setl tabstop=4 shiftwidth=4 softtabstop=4
@@ -265,11 +265,3 @@ inoremap <right> <NOP>
 
 highlight EndOfBuffer ctermfg=black ctermbg=black
 highlight StatusLine cterm=None term=None
-
-autocmd FileType markdown |
-      \hi def link markdownItalic              NONE |
-      \hi def link markdownItalicDelimiter     NONE |
-      \hi def link markdownBold                NONE |
-      \hi def link markdownBoldDelimiter       NONE |
-      \hi def link markdownBoldItalic          NONE |
-      \hi def link markdownBoldItalicDelimiter NONE
