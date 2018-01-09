@@ -205,6 +205,7 @@ let g:goyo_liner=70
 if has("autocmd")
   au FileType markdown,txt,html,jade set spell
   "au FileType markdown,txt Goyo 70
+  au FileType markdown,txt setl fo=cqt wm=0 tw=70
   au FileType yaml,javascript,html,json,jade,stylus setl tabstop=2 shiftwidth=2 softtabstop=2
   au FileType go setl tabstop=8 shiftwidth=8 softtabstop=8
   au FileType java,python setl tabstop=4 shiftwidth=4 softtabstop=4
