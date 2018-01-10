@@ -209,12 +209,6 @@ execute 'syn match markdownLinkContainer '
   \ . '/'
   \ . '!\?'
   \ . b:markdown_syntax_square_brackets_block
-  \ . '\%(\s*\|\n\%\(\n\)\@!\)'
-  \ . '\%('
-  \ .   b:markdown_syntax_round_brackets_block
-  \ .   '\|'
-  \ .   b:markdown_syntax_square_brackets_block
-  \ . '\)'
   \ . '/'
 
 execute 'syn match markdownLinkTextContainer contained '
@@ -879,7 +873,7 @@ hi def Italic                       term=italic cterm=italic gui=italic
 hi def Bold                         term=bold cterm=bold gui=bold
 hi def BoldItalic                   term=bold,italic cterm=bold,italic gui=bold,italic
 
-hi def link markdownItalic                  Italic
+hi def link markdownItalic                  Bold
 hi def link markdownBold                    Bold
 hi def link markdownBoldItalic              BoldItalic
 
