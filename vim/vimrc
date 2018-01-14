@@ -26,8 +26,8 @@ Plugin 'cespare/vim-toml'
 Plugin 'tfnico/vim-gradle'
 Plugin 'keith/swift.vim'
 Plugin 'mustache/vim-mustache-handlebars'
-"Plugin 'gabrielelana/vim-markdown'
 Plugin 'tpope/vim-markdown'
+Plugin 'vim-scripts/abnf'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
