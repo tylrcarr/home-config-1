@@ -185,15 +185,12 @@ command Skid :call GetSKID()<CR>
 
 " modula what?
 autocmd BufNewFile,BufRead *.md set filetype=markdown
-autocmd BufNewFile,BufRead LINKS set filetype=markdown
 
 let g:markdownfmt_command = 'markdownfmt'
 let g:markdownfmt_autosave=1
 
 " json almost  == javascript
 autocmd BufNewFile,BufRead *.json set ft=json
-autocmd BufNewFile,BufRead META set ft=markdown
-autocmd BufNewFile,BufRead *.esml set ft=toml
 autocmd BufNewFile,BufRead *.esdl set ft=toml
 
 " crontab
