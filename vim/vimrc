@@ -28,6 +28,7 @@ Plugin 'keith/swift.vim'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'tpope/vim-markdown'
 Plugin 'skilstak/vim-abnf-utf8'
+Plugin 'sudar/vim-arduino-syntax'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
